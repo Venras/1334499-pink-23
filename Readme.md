@@ -1,7 +1,7 @@
-# Личный проект «Пинк» 
+# Личный проект «Пинк»
 
-* Студент: [Зияуддин Асланов](https://up.htmlacademy.ru/adaptive/23/user/1334499).
-* Наставник: `Неизвестно`.
+- Студент: [Зияуддин Асланов](https://up.htmlacademy.ru/adaptive/23/user/1334499).
+- Наставник: [Алексей Елькин](https://htmlacademy.ru/profile/alex_elkin).
 
 ---
 
