@@ -3,8 +3,9 @@
   padding-bottom: 41px;
 
   @media @tablet {
-    padding-top: 38px;
+    padding-top: 33px;
     padding-bottom: 38px;
+    padding-left: 1px;
   }
 
   @media @desktop {
@@ -12,12 +13,8 @@
     padding-bottom: 74px;
   }
 
-  &--index {
-    display: none;
-
-    @media @tablet {
-      display: block;
-    }
+  @media @tablet {
+    display: block;
   }
 }
 
@@ -52,11 +49,24 @@
     margin-right: 13px;
     font-size: 18px;
   }
+
+  @media @tablet {
+    margin-right: 15px;
+  }
 }
 
 .page-footer__copyright-link {
   display: block;
   color: @pink;
+  margin-right: 9px;
+
+  @media @tablet {
+    margin-right: 1px;
+  }
+
+  @media @desktop {
+    margin-right: 13px;
+  }
 
   &:hover {
     color: @bg-color-header;

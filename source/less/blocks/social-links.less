@@ -1,8 +1,10 @@
 .social-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  .list-reset();
+  display: grid;
+  grid-row: 1 / 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 3px;
+  padding: 0;
+  list-style: none;
 
   padding-top: 39px;
   padding-bottom: 39px;
@@ -25,12 +27,12 @@
   }
 
   @media @desktop {
-    margin: 0 2px 0 10px;
+    margin: 0 5px 1px 1px;
   }
 }
 
 .social-links__link {
-  display: flex;
+  display: grid;
   width: 45px;
   height: 45px;
   border-width: 3px;

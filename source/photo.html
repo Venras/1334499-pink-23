@@ -17,14 +17,10 @@
         <h2 class="visually-hidden">Навигация</h2>
         <div class="main-nav__logo-wrapper">
           <a class="header-logo" href="index.html" aria-label="Логотип Pink">
-            <svg class="header-logo__image header-logo__image--mobile" width="74" height="23">
-              <use xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
-            </svg>
-            <svg class="header-logo__image header-logo__image--tablet" width="146" height="40">
-              <use xlink:href="img/sprite.svg#logo-pink-white-tablet"></use>
-            </svg>
-            <svg class="header-logo__image header-logo__image--desktop" width="146" height="40">
-              <use xlink:href="img/sprite.svg#logo-pink-white-desktop"></use>
+            <svg class="header-logo__image" width="74" height="23">
+              <use class="header-logo__image--mobile" xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
+              <use class="header-logo__image--tablet" xlink:href="img/sprite.svg#logo-pink-white-tablet"></use>
+              <use class="header-logo__image--desktop" xlink:href="img/sprite.svg#logo-pink-white-desktop"></use>
             </svg>
           </a>
 
@@ -88,8 +84,10 @@
             <time class="photo__date" datetime="2017-09-22T19:00">(5 минут назад)</time>
           </p>
 
-          <p class="photo__text photo__text--full">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую
-            трансляцию в перископе, задавайте свои вопросы!</p>
+          <p class="photo__text photo__text--full">Прыгать или нет? Напишите в коментарии свой совет и<br
+              class="photo__br"> смотрите
+            прямую
+            трансляцию в перископе,&nbsp;задавайте&nbsp;свои&nbsp;вопросы!</p>
 
           <div class="photo__likes photo__likes--full">
             <button class="photo__like-button" type="button" aria-label="Нравится!"></button>
