@@ -1,12 +1,8 @@
 .main-nav {
+  background-color: @bg-color-header;
+
   @media @desktop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 940px;
-    background-color: transparent;
+    background-color: fade(@black, 30%);
   }
 }
 
@@ -18,6 +14,7 @@
   @media @tablet {
     padding-top: 27px;
     padding-bottom: 43px;
+    align-items: flex-end;
   }
 
   @media @desktop {
@@ -26,69 +23,212 @@
   }
 }
 
-.main-nav__toggle {
-  position: relative;
-  display: none;
-  align-self: flex-end;
-  padding: 0;
-  border: 0;
-  width: 50px;
+.main-nav__nav-wrapper {
+  @media @desktop {
+    position: static;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: transparent;
+  }
+}
+
+.main-nav-logo {
+  display: block;
+  width: 74px;
   height: 24px;
   color: @white;
-  background-color: transparent;
 
-  @media @desktop {
-    display: none;
+  @media @tablet {
+    width: 146px;
+    height: 40px;
   }
 
-  &:hover,
-  &:active {
+  &[href]:hover {
     color: @pink;
   }
 
-  &:active {
+  &[href]:active {
     opacity: 0.3;
   }
+}
 
-  &::before,
-  &::after {
+.main-nav__image {
+  display: block;
+  width: 100%;
+  height: 24px;
+  fill: currentColor;
+  pointer-events: none;
+
+  @media @tablet {
+    width: 146px;
+    height: 40px;
+  }
+
+  &--mobile {
+    @media @tablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @media @tablet {
+      display: block;
+    }
+
+    @media @desktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @media @desktop {
+      display: block;
+    }
+  }
+}
+
+.main-nav__toggle {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 24px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  .main-nav__cross-logo {
+    display: none;
+    fill: #ffffff;
+  }
+}
+
+.main-nav--closed {
+  .main-nav__toggle::before {
     content: "";
     position: absolute;
-    top: 50%;
-    right: -3px;
-    width: 28px;
+    top: 0;
+    left: 0;
+    width: 50px;
     height: 4px;
-    background-color: currentColor;
+    background-color: #ffffff;
+    box-shadow: 0 10px 0 0 #ffffff, 0 20px 0 0 #ffffff;
   }
 
-  &::before {
-    transform: translateY(-50%) rotate(45deg);
+  .main-nav__toggle:hover::before,
+  .main-nav__toggle:focus::before {
+    background-color: #d22856;
+    box-shadow: 0 10px 0 0 #d22856, 0 20px 0 0 #d22856;
   }
 
-  &::after {
-    transform: translateY(-50%) rotate(-45deg);
+  .main-nav__toggle:active::before {
+    opacity: 0.3;
   }
+}
 
-  &--off {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      transform: none;
-      width: 50px;
-      height: 4px;
-      background-color: currentColor;
-      box-shadow: 0 10px 0 0 currentColor, 0 20px 0 0 currentColor;
+.main-nav--opened {
+  .main-nav__toggle {
+    width: 24px;
+
+    &:hover svg,
+    &:focus svg {
+      fill: #d22856;
     }
 
-    &::after {
-      content: none;
+    &:active svg {
+      opacity: 0.3;
     }
   }
 
-  &--js {
+  .main-nav__cross-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
+  }
+}
+
+@media (max-width: @desktop-width) {
+  .main-nav--closed,
+  .main-nav--opened {
+    position: relative;
+    background-color: fade(@black, 30%);
+  }
+  .main-nav--opened {
+    background-color: @bg-color-header;
+  }
+  .main-nav--closed .main-nav__menu {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: @bg-color-header;
+  }
+
+  .main-nav--nojs {
+    background-color: #283645;
+
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-menu__item {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav__image {
+    &--mobile {
+      display: none;
+    }
+
+    &--tablet {
+      display: inline;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav__logo-wrapper {
+    align-self: center;
+  }
+
+  .main-nav__logo {
+    color: #d22856;
+
+    margin-bottom: 12px;
+
+    &:active {
+      color: #ffffff;
+    }
+  }
+
+  .main-nav__image {
+    &--tablet {
+      display: none;
+    }
+
+    &--desktop {
+      display: inline;
+    }
+  }
+
+  .main-nav__toggle {
+    display: none;
   }
 }

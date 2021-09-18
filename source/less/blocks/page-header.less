@@ -2,7 +2,7 @@
   position: relative;
   background-color: @bg-color-header;
   background-image: url("../img/bg-back-mobile@1x.jpg");
-  background-position: 50% 259px;
+  background-position: 50% 0;
   background-size: image-size("../img/bg-back-mobile@1x.jpg");
   background-repeat: no-repeat;
   color: @white;
@@ -13,7 +13,7 @@
 
   @media @tablet {
     background-image: url("../img/bg-back-tablet@1x.jpg");
-    background-position: 50% 256px;
+    background-position: 50% 0;
     background-size: image-size("../img/bg-back-tablet@1x.jpg");
 
     @media @retina {
@@ -31,47 +31,17 @@
     }
   }
 
-  &--js {
-    padding-top: 66px;
-    background-position: 50% 0;
+  &--no-js {
+    background-position: 50% 259px;
 
     @media @tablet {
-      padding-top: 110px;
+      background-position: 50% 256px;
+    }
+
+    @media @desktop {
       background-position: 50% 0;
     }
-
-    @media @desktop {
-      padding-top: 0;
-    }
   }
-}
-
-.page-header__nav-wrapper {
-  background-color: @bg-color-header;
-
-  @media @desktop {
-    background-color: fade(@black, 30%);
-  }
-
-  &--js {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    right: 0;
-    top: 0;
-
-    @media @desktop {
-      position: static;
-    }
-  }
-
-  &--transparent {
-    background-color: fade(@black, 30%);
-  }
-}
-
-.page-header__main-nav {
-  margin: 0 auto;
 }
 
 .page-header__store {
@@ -112,5 +82,23 @@
 
   @media @desktop {
     margin-top: 32px;
+  }
+}
+
+.page-header__title-mob {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  text-align: center;
+
+  @media @tablet {
+    display: none;
+  }
+
+  @media @desktop {
+    display: none;
   }
 }
